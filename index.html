@@ -10,9 +10,13 @@
 <body>
 
     <div id="app">
+
+        <h1 v-if="loading" >
+         LOADING......
+        </h1>
        
         <ul id="listaEmail">
-            <li v-if="emails.length === 10" v-for="email in emails">
+            <li v-if="emails.length === 10" if-else="!loading" v-for="email in emails">
                 {{email}}
             </li>
         </ul>

@@ -4,6 +4,7 @@ const app = new Vue ({
     data:{
 
         emails: [],
+        loading: true,
 
     },
 
@@ -16,7 +17,8 @@ const app = new Vue ({
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then( risp => {
               this.emails.push(risp.data.response);
-              console.log(this.emails);
+              this.loading = false
+              
             })
         }
     },
